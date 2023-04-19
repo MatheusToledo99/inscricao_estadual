@@ -1,7 +1,7 @@
 name: inscricao_estadual
 description: Package para validação de inscrição estadual.
-version: 0.0.1
-homepage:
+version: 1.0.0
+homepage: https://github.com/MatheusToledo99/inscricao_estadual
 
 environment:
   sdk: '>=3.0.0-191.0.dev <4.0.0'
