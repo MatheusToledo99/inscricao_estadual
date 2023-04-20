@@ -2,4 +2,4 @@
 * Primeiro release
 
 ## 1.0.1
-* Inclusão do README.md
+* Implementação das recomandações pub points
