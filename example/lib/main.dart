@@ -30,39 +30,39 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  IconData _icon = Icons.check_box_rounded;
+  IconData _icon = Icons.check_box_outline_blank_rounded;
   final ieController = TextEditingController();
   final estadoController = TextEditingController();
   final inscricaoEstadual = InscricaoEstadual();
   bool inscricaoEstadualEhValida = false;
 
   void _validarInscricao() {
-    //O examplo abaixo contempla os estados de MG e RJ.
+    //O exemplo abaixo contempla os estados de MG e RJ.
     //Para os demais estados fica a mesma lógica, à liberdade do programador de como irá preferir
     //a seleção dos estados brasileiros, sendo apenas necessário passar para o package o estado
     //selecionado.
 
     if (estadoController.text == 'MG') {
-    
       inscricaoEstadualEhValida = inscricaoEstadual.validaInscricaoEstadual(
         inscricaoEstadual: ieController.text,
         sigla: Estados.MG,
       );
-    } else if (estadoController.text == 'RJ') {
+    }
+    else if (estadoController.text == 'RJ') {
       inscricaoEstadualEhValida = inscricaoEstadual.validaInscricaoEstadual(
         inscricaoEstadual: ieController.text,
         sigla: Estados.RJ,
       );
     }
-    if (inscricaoEstadualEhValida) {
+    if (inscricaoEstadualEhValida == true) {
       setState(() {
         _icon = Icons.check_box_rounded;
       });
-      return;
+    } else {
+      setState(() {
+        _icon = Icons.check_box_outline_blank_rounded;
+      });
     }
-    setState(() {
-      _icon = Icons.check_box_outline_blank_rounded;
-    });
   }
 
   @override

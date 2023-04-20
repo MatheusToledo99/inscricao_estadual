@@ -1,6 +1,5 @@
 class InscricaoEstadualIndividual {
-  
-    bool validaIEAcre(String inscricaoEstadual) {
+  bool validaIEAcre(String inscricaoEstadual) {
     if (inscricaoEstadual.length != 13) {
       return false;
     }
@@ -1062,6 +1061,4 @@ class InscricaoEstadualIndividual {
     }
     return true;
   }
-  
 }
-

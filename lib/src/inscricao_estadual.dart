@@ -33,11 +33,10 @@ enum Estados {
 }
 
 class InscricaoEstadual {
-  bool validaInscricaoEstadual({required String inscricaoEstadual, required Estados sigla}) {
-    
+  bool validaInscricaoEstadual(
+      {required String inscricaoEstadual, required Estados sigla}) {
     final inscricaoEstadualIndividual = InscricaoEstadualIndividual();
-      
-    
+
     switch (sigla) {
       case Estados.AC:
         return inscricaoEstadualIndividual.validaIEAcre(inscricaoEstadual);
@@ -52,19 +51,24 @@ class InscricaoEstadual {
       case Estados.CE:
         return inscricaoEstadualIndividual.validaIECeara(inscricaoEstadual);
       case Estados.DF:
-        return inscricaoEstadualIndividual.validaIEDistritoFederal(inscricaoEstadual);
+        return inscricaoEstadualIndividual
+            .validaIEDistritoFederal(inscricaoEstadual);
       case Estados.ES:
-        return inscricaoEstadualIndividual.validaIEEspiritoSanto(inscricaoEstadual);
+        return inscricaoEstadualIndividual
+            .validaIEEspiritoSanto(inscricaoEstadual);
       case Estados.GO:
         return inscricaoEstadualIndividual.validaIEGoias(inscricaoEstadual);
       case Estados.MA:
         return inscricaoEstadualIndividual.validaIEMaranhao(inscricaoEstadual);
       case Estados.MG:
-        return inscricaoEstadualIndividual.validaIEMinasGerais(inscricaoEstadual);
+        return inscricaoEstadualIndividual
+            .validaIEMinasGerais(inscricaoEstadual);
       case Estados.MS:
-        return inscricaoEstadualIndividual.validaIEMatoGrossoSul(inscricaoEstadual);
+        return inscricaoEstadualIndividual
+            .validaIEMatoGrossoSul(inscricaoEstadual);
       case Estados.MT:
-        return inscricaoEstadualIndividual.validaIEMatoGrosso(inscricaoEstadual);
+        return inscricaoEstadualIndividual
+            .validaIEMatoGrosso(inscricaoEstadual);
       case Estados.PA:
         return inscricaoEstadualIndividual.validaIEPara(inscricaoEstadual);
       case Estados.PB:
@@ -72,23 +76,28 @@ class InscricaoEstadual {
       case Estados.PI:
         return inscricaoEstadualIndividual.validaIEPiaui(inscricaoEstadual);
       case Estados.PE:
-        return inscricaoEstadualIndividual.validaIEPernambuco(inscricaoEstadual);
+        return inscricaoEstadualIndividual
+            .validaIEPernambuco(inscricaoEstadual);
       case Estados.PR:
         return inscricaoEstadualIndividual.validaIEParana(inscricaoEstadual);
       case Estados.RJ:
-        return inscricaoEstadualIndividual.validaIERioJaneiro(inscricaoEstadual);
+        return inscricaoEstadualIndividual
+            .validaIERioJaneiro(inscricaoEstadual);
       case Estados.RN:
-        return inscricaoEstadualIndividual.validaIERioGrandeNorte(inscricaoEstadual);
+        return inscricaoEstadualIndividual
+            .validaIERioGrandeNorte(inscricaoEstadual);
       case Estados.RO:
         return inscricaoEstadualIndividual.validaIERondonia(inscricaoEstadual);
       case Estados.RR:
         return inscricaoEstadualIndividual.validaIERoraima(inscricaoEstadual);
       case Estados.RS:
-        return inscricaoEstadualIndividual.validaIERioGrandeSul(inscricaoEstadual);
+        return inscricaoEstadualIndividual
+            .validaIERioGrandeSul(inscricaoEstadual);
       case Estados.SE:
         return inscricaoEstadualIndividual.validaIESergipe(inscricaoEstadual);
       case Estados.SC:
-        return inscricaoEstadualIndividual.validaIESantaCatarina(inscricaoEstadual);
+        return inscricaoEstadualIndividual
+            .validaIESantaCatarina(inscricaoEstadual);
       case Estados.SP:
         return inscricaoEstadualIndividual.validaIESaoPaulo(inscricaoEstadual);
       case Estados.TO:
@@ -99,5 +108,3 @@ class InscricaoEstadual {
     }
   }
 }
-
-

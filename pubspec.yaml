@@ -1,10 +1,10 @@
 name: inscricao_estadual
-description: Package para validação de inscrição estadual.
-version: 1.0.0
+description: Package para facilitar a validação de incrição estadual, evitando assim, o erro de NF-e de inscrição estadual inválida.
+version: 1.0.1
 homepage: https://github.com/MatheusToledo99/inscricao_estadual
 
 environment:
-  sdk: '>=3.0.0-191.0.dev <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
