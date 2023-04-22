@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   IconData _icon = Icons.check_box_outline_blank_rounded;
   final ieController = TextEditingController();
-  final estadoController = TextEditingController();
+  String? estadoSelecionado;
   final inscricaoEstadual = InscricaoEstadual();
   bool inscricaoEstadualEhValida = false;
 
@@ -42,13 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
     //a seleção dos estados brasileiros, sendo apenas necessário passar para o package o estado
     //selecionado.
 
-    if (estadoController.text == 'MG') {
+    if (estadoSelecionado == 'MG') {
       inscricaoEstadualEhValida = inscricaoEstadual.validaInscricaoEstadual(
         inscricaoEstadual: ieController.text,
         sigla: Estados.MG,
       );
-    }
-    else if (estadoController.text == 'RJ') {
+    } else if (estadoSelecionado == 'RJ') {
       inscricaoEstadualEhValida = inscricaoEstadual.validaInscricaoEstadual(
         inscricaoEstadual: ieController.text,
         sigla: Estados.RJ,
@@ -78,16 +77,34 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             const Text('Digite abaixo a inscricao estadual:'),
-            TextField(
-              controller: ieController,
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.25),
+              child: TextField(
+                controller: ieController,
+              ),
             ),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 20),
             ),
-            const Text('Digite a sigla do Estado (Exemplo):'),
-            TextField(
-              controller: estadoController,
-            ),
+            const Text('Digite a sigla do Estado:'),
+            DropdownButton(
+                value: estadoSelecionado,
+                items: const [
+                  DropdownMenuItem(
+                    value: "MG",
+                    child: Text('MG'),
+                  ),
+                  DropdownMenuItem(
+                    value: "RJ",
+                    child: Text('RJ'),
+                  ),
+                ],
+                onChanged: (value) {
+                  setState(() {
+                    estadoSelecionado = value.toString();
+                  });
+                }),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 20),
             ),
